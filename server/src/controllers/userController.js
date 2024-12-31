@@ -6,6 +6,7 @@ import { v2 as cloudinary } from "cloudinary";
 import doctor from "../models/doctorModel.js";
 import appointment from "../models/appointmentModel.js";
 import razorpay from "razorpay";
+import sendMail from "../utils/SendMail.js";
 
 // Api to register user
 
@@ -52,8 +53,8 @@ const registerUser = async (req, res) => {
     };
 
     const createUser = await user.create(userData);
-
     const token = jwt.sign({ id: createUser._id }, process.env.JWT_KEY);
+    await sendMail(email, name);
 
     res.json({
       success: true,

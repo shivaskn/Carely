@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import {motion} from 'framer-motion'
 
 const Contact = () => {
   const initial = {
@@ -40,20 +41,52 @@ const Contact = () => {
 
   return (
     <div>
-      <div className="text-center text-2xl pt-10 text-black">
+      <motion.div 
+         initial={{ y: -100, opacity: 0 }}
+         whileInView={{y: 0, opacity: 1}}
+       //  animate={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          y: { type: "spring", stiffness: 60 },
+          opacity: { duration: 1 },
+          ease: "easeIn",
+          duration: 1,
+        }}
+      className="text-center text-2xl pt-10 text-black">
         <p>
           CONTACT <span className="text-primary font-semibold">US</span>
         </p>
-      </div>
+      </motion.div>
 
       <div className="my-10 flex flex-col justify-center  md:flex-row flex-wrap gap-10 mb-28 text-sm ">
-        <img
+        <motion.img
+           initial={{ y: -100, opacity: 0 }}
+           whileInView={{y: 0, opacity: 1}}
+         //  animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            y: { type: "spring", stiffness: 60 },
+            opacity: { duration: 1 },
+            ease: "easeIn",
+            duration: 1,
+          }}
           className="w-full md:max-w-[360px] border-violet-400 shadow-2xl"
           src={assets.contact_image}
           alt="image"
         />
 
-        <div className="flex flex-col justify-center items-start gap-6 ">
+        <motion.div 
+           initial={{ y: -100, opacity: 0 }}
+           whileInView={{y: 0, opacity: 1}}
+         //  animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            y: { type: "spring", stiffness: 60 },
+            opacity: { duration: 1 },
+            ease: "easeIn",
+            duration: 1,
+          }}
+        className="flex flex-col justify-center items-start gap-6 ">
           <p className="font-semibold text-lg text-black">OUR OFFICE</p>
           <p className="text-black">
             Anna Nagar Nammatha Street <br /> chennai-40, Tamilnadu
@@ -69,9 +102,20 @@ const Contact = () => {
           <button className="border border-black px-8 py-4 text-sm hover:bg-primary hover:text-white transition-all duration-300">
             Coming Soon
           </button>
-        </div>
+        </motion.div>
 
-        <div className="border-2 p-5 md:w-[60%] lg:w-[60%] xl:w-[30%] shadow-lg">
+        <motion.div 
+           initial={{ y: -100, opacity: 0 }}
+           whileInView={{y: 0, opacity: 1}}
+         //  animate={{ y: 0, opacity: 1 }}
+          transition={{
+            delay: 0.2,
+            y: { type: "spring", stiffness: 60 },
+            opacity: { duration: 1 },
+            ease: "easeIn",
+            duration: 1,
+          }}
+        className="border-2 p-5 md:w-[60%] lg:w-[60%] xl:w-[30%] shadow-lg">
           <form onSubmit={handelSubmit}>
             <p className="text-center mb-1 font-medium md:text-2xl">
               ENTER YOUR <span className="text-primary">DETAILS</span>
@@ -124,7 +168,7 @@ const Contact = () => {
               </button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

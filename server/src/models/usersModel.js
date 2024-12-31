@@ -47,3 +47,5 @@ import mongoose, { Types } from "mongoose";
 
  const user = mongoose.models.user || mongoose.model('user',userSchema)
  export default user;
+
+ 

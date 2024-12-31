@@ -5,6 +5,7 @@ import { assets } from "../assets/assets";
 import RelatedDoc from "../components/RelatedDoc";
 import { toast } from "react-toastify";
 import axios from "axios";
+import {motion} from 'framer-motion'
 
 const Appointment = () => {
   const { docId } = useParams();
@@ -185,7 +186,18 @@ const Appointment = () => {
     doctorinfo && (
       <div className="mx-6 mt-10">
         {/**/}
-        <div className="flex flex-col sm:flex-row gap-4">
+        <motion.div 
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{y: 0, opacity: 1}}
+        //  animate={{ y: 0, opacity: 1 }}
+         transition={{
+           delay: 0.2,
+           y: { type: "spring", stiffness: 60 },
+           opacity: { duration: 1 },
+           ease: "easeIn",
+           duration: 1,
+         }}
+        className="flex flex-col sm:flex-row gap-4">
           <div>
             <img
               className="bg-primary w-full sm:max-w-72 rounded-lg shadow-2xl"
@@ -224,11 +236,22 @@ const Appointment = () => {
               </span>
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/*Booking Slots*/}
 
-        <div className="sm:ml-72 sm:pl-4 mt-16 font-medium text-gray-700 ">
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          whileInView={{y: 0, opacity: 1}}
+        //  animate={{ y: 0, opacity: 1 }}
+         transition={{
+           delay: 0.2,
+           y: { type: "spring", stiffness: 60 },
+           opacity: { duration: 1 },
+           ease: "easeIn",
+           duration: 1,
+         }}
+        className="sm:ml-72 sm:pl-4 mt-16 font-medium text-gray-700 ">
           <p>Booking Slots</p>
           <div className="flex gap-3 items-center w-full overflow-x-scroll mt-4 ">
             {doctorSlots.length &&
@@ -272,7 +295,7 @@ const Appointment = () => {
           >
             Book An Appointment
           </button>
-        </div>
+        </motion.div>
         {/* Related Doctor*/}
         <RelatedDoc docId={docId} speciality={doctorinfo.speciality} />
       </div>

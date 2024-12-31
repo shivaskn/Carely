@@ -196,6 +196,16 @@ const AddDoctor = () => {
                 <option value="Pediatricians">Pediatricians</option>
                 <option value="Neurologist">Neurologist</option>
                 <option value="Gastroenterologist">Gastroenterologist</option>
+                <option value="Psychiatry">Psychiatry</option>
+                <option value="Urology">Urology</option>
+                <option value="Anesthesiology">Anesthesiology</option>
+                <option value="sexologist">sexologist</option>
+                <option value="Orthopedics">Orthopedics</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Hematology">Hematology</option>
+                <option value="Dentist">Dentist</option>
+                <option value="Ear-nose-throat (ent) ">Ear-nose-throat (ent) </option>
+                <option value="Ayurveda">Ayurveda</option>
               </select>
             </div>
 

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { assets } from "../assets/assets";
+import {useNavigate} from 'react-router-dom'
 import { AdminContext } from "../context/AdminContext";
 import {DoctorContext} from "../context/DoctorContext"
 import axios from 'axios';
@@ -9,6 +9,9 @@ const Login = () => {
   {
     /*Initial state of the form after submitting the input section will be empty*/
   }
+  
+  const navigate = useNavigate()
+
   const initial = {
     email: "",
     password: "",
@@ -34,6 +37,7 @@ const Login = () => {
         if(data.success){
             {/* So inga vanthu nammaloda token ha localstrong la save or set pannurom*/}
             localStorage.setItem('adminToken',data.token)
+            navigate('/admin-dashboard')
             setAdminToken(data.token)
         } else {
             toast.error(data.message)
@@ -44,6 +48,7 @@ const Login = () => {
             if(data.success){
               {/* So inga vanthu nammaloda token ha localstrong la save or set pannurom*/}
               localStorage.setItem('dToken',data.token)
+              navigate('/doctor-dashboard')
               setDToken(data.token)
               console.log(data.token)
             } else {

@@ -1,12 +1,24 @@
 import React from "react";
 import { assets, specialityData } from "../assets/assets";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const SpecialityMenu = () => {
+  const navigate = useNavigate();
   return (
     <div>
       {/* up */}
-      <div
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+         whileInView={{y: 0, opacity: 1}}
+        // animate={{ y: 0, opacity: 1 }}
+        transition={{
+          delay: 0.2,
+          y: { type: "spring", stiffness: 60 },
+          opacity: { duration: 1 },
+          ease: "easeIn",
+          duration: 1,
+        }}
         className="flex flex-col  items-center gap-4 py-10 md:py-16 text-gray-800"
         id="speciality"
       >
@@ -33,14 +45,18 @@ const SpecialityMenu = () => {
               <p>{item.speciality}</p>
             </Link>
           ))}
-          
         </div>
-      </div>
-      
+        <button
+          onClick={() => {
+            navigate("/doctors"), scroll(0, 0);
+          }}
+          className="bg-violet-700 text-white px-12 py-3 rounded-full mt-5 hover:scale-105 transition-all duration-300"
+        >
+          More
+        </button>
+      </motion.div>
 
       {/* down */}
-
-  
     </div>
   );
 };

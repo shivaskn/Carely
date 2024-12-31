@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { AppContext } from "../context/AppContext";
+import {motion} from 'framer-motion'
 
 const Doctors = () => {
   const { speciality } = useParams();
@@ -8,6 +9,7 @@ const Doctors = () => {
   const { doctors } = useContext(AppContext);
   const [filterDoctor, setfilterDoctor] = useState([]);
   const navigate = useNavigate();
+  
 
   const applyFilters = () => {
     if (speciality) {
@@ -24,8 +26,21 @@ const Doctors = () => {
   }, [doctors, speciality]);
 
   return (
-    <div className="md:mx-6 mt-6">
-      <p className="  text-black font-medium">Browse through the doctors specialist.</p>
+    <motion.div
+    initial={{ y: -100, opacity: 0 }}
+    whileInView={{y: 0, opacity: 1}}
+  //  animate={{ y: 0, opacity: 1 }}
+   transition={{
+     delay: 0.2,
+     y: { type: "spring", stiffness: 60 },
+     opacity: { duration: 1 },
+     ease: "easeIn",
+     duration: 1,
+   }}
+    className="md:mx-6 mt-6">
+      <p className="  text-black font-medium">
+        Browse through the doctors specialist.
+      </p>
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-5">
         <button
           className={`py-1 px-3 border border-black rounded text-sm transition-all sm:hidden ${
@@ -140,6 +155,156 @@ const Doctors = () => {
           >
             Gastroenterologist
           </p>
+
+          <p
+            onClick={() =>
+              speciality === "Psychiatry"
+                ? navigate("/doctors")
+                : navigate("/doctors/Psychiatry")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Psychiatry"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Psychiatry
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "Urology"
+                ? navigate("/doctors")
+                : navigate("/doctors/Urology")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Urology"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Urology
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "Anesthesiology"
+                ? navigate("/doctors")
+                : navigate("/doctors/Anesthesiology")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Anesthesiology"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Anesthesiology
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "sexologist"
+                ? navigate("/doctors")
+                : navigate("/doctors/sexologist")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "sexologist"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            sexologist
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "Orthopedics"
+                ? navigate("/doctors")
+                : navigate("/doctors/Orthopedics")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Orthopedics"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Orthopedics
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "Cardiology"
+                ? navigate("/doctors")
+                : navigate("/doctors/Cardiology")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Cardiology"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Cardiology
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "Hematology"
+                ? navigate("/doctors")
+                : navigate("/doctors/Hematology")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Hematology"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Hematology
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "Dentist"
+                ? navigate("/doctors")
+                : navigate("/doctors/Dentist")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Dentist"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Dentist
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "Ear-nose-throat (ent)"
+                ? navigate("/doctors")
+                : navigate("/doctors/Ear-nose-throat (ent)")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Ear-nose-throat (ent)"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Ear-nose-throat (ent)
+          </p>
+
+          <p
+            onClick={() =>
+              speciality === "Ayurveda"
+                ? navigate("/doctors")
+                : navigate("/doctors/Ayurveda")
+            }
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 md:hover:scale-105 border text-black border-primary rounded transition-all cursor-pointer ${
+              speciality === "Ayurveda"
+                ? "bg-primary text-white transition-all duration-300"
+                : " "
+            }`}
+          >
+            Ayurveda
+          </p>
         </div>
         <div className="w-full grid grid-cols-auto gap-5 gap-y-6">
           {filterDoctor.map((item, index) => (
@@ -169,7 +334,7 @@ const Doctors = () => {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

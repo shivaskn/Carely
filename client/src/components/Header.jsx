@@ -1,4 +1,5 @@
 import React from "react";
+import {motion} from 'framer-motion'
 import { assets } from "../assets/assets";
 
 const Header = () => {
@@ -9,7 +10,12 @@ const Header = () => {
       {/*In this we have one parent container and two child container for left side and right side*/}
 
       {/*Left*  left side section*/}
-      <div className="md:w-1/2 flex flex-col items-start justify-center gap-4 py-10 m-auto md:py-[10vw] md:mb-[-30px]">
+      <motion.div 
+       initial={{x:-100,opacity:0}}
+      //  whileInView={{x: 0, opacity: 1}} 
+      animate={{x: 0, opacity: 1}} 
+       transition={{delay:0.2, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
+      className="md:w-1/2 flex flex-col items-start justify-center gap-4 py-10 m-auto md:py-[10vw] md:mb-[-30px]">
         <p className="text-3xl md:text-4xl lg:text-5xl text-white font-semibold leading-tight md:leading-tight lg:leading-tight ">
           Book Appointment
           <br />
@@ -24,11 +30,16 @@ const Header = () => {
         <a href="/doctors" className="flex items-center gap-2  bg-white px-8 py-3 rounded-full text-gray-600 text-sm m-auto md:m-0 hover:scale-105 translate-all duration-300">
           Book appointment <img className="w-3" src={assets.arrow_icon} alt="book now" />
         </a>
-      </div>
+      </motion.div>
       
       {/* Right*  right side section*/}
       <div className="md:w-[45%] relative">
-        <img className="w-full md:absolute bottom-0 h-auto rounded-lg" src={assets.header_img} alt="doctor"  />
+        <motion.img 
+        initial={{x:-100,opacity:0}}
+            // whileInView={{x: 0, opacity: 1}} 
+      animate={{x: 0, opacity: 1}} 
+        transition={{delay:0.2, x:{type:"spring", stiffness:60}, opacity:{duration:1}, ease:"easeIn", duration:1}}
+        className="w-full md:absolute bottom-0 h-auto rounded-lg" src={assets.header_img} alt="doctor"  />
       </div>
     </div>
   ); 

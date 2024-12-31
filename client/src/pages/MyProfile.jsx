@@ -3,6 +3,7 @@ import { AppContext } from '../context/AppContext'
 import {assets} from '../assets/assets'
 import { toast } from 'react-toastify'
 import axios from 'axios';
+import {motion} from 'framer-motion'
 
 const MyProfile = () => {
 
@@ -43,7 +44,18 @@ const MyProfile = () => {
   }
 
   return userData && (
-    <div className=' flex flex-col lg:flex-row justify-center items-center gap-2 text-sm relative top-14'>
+    <motion.div
+    initial={{ y: -100, opacity: 0 }}
+    whileInView={{y: 0, opacity: 1}}
+  //  animate={{ y: 0, opacity: 1 }}
+   transition={{
+     delay: 0.2,
+     y: { type: "spring", stiffness: 60 },
+     opacity: { duration: 1 },
+     ease: "easeIn",
+     duration: 1,
+   }}
+    className=' flex flex-col lg:flex-row justify-center items-center gap-2 text-sm relative top-14'>
     
       {
         isEdit
@@ -134,7 +146,7 @@ const MyProfile = () => {
         }
       </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

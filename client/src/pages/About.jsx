@@ -1,13 +1,37 @@
 import React from 'react'
 import {assets} from '../assets/assets'
+import {motion} from 'framer-motion'
+
 const About = () => {
   return (
     <div>
-      <div className='text-center text-2xl pt-10 text-black font-medium'>
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{y: 0, opacity: 1}}
+      //  animate={{ y: 0, opacity: 1 }}
+       transition={{
+         delay: 0.2,
+         y: { type: "spring", stiffness: 60 },
+         opacity: { duration: 1 },
+         ease: "easeIn",
+         duration: 1,
+       }}
+      className='text-center text-2xl pt-10 text-black font-medium'>
         <p>ABOUT <span className='text-primary font-semibold'>CARELY</span></p>
-      </div>
+      </motion.div>
 
-      <div className='my-10 flex flex-col md:flex-row gap-12 justify-center'>
+      <motion.div
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{y: 0, opacity: 1}}
+      //  animate={{ y: 0, opacity: 1 }}
+       transition={{
+         delay: 0.2,
+         y: { type: "spring", stiffness: 60 },
+         opacity: { duration: 1 },
+         ease: "easeIn",
+         duration: 1,
+       }}
+      className='my-10 flex flex-col md:flex-row gap-12 justify-center'>
         <img className='w-full md:max-w-[360px] rounded-xl' src={assets.about_image} alt='image'/>
         <div className='flex flex-col justify-center gap-6 md:w-2/4 text-sm  text-black'>
           <p>Welcome to Carely, your trusted partner in managing your healthcare needs conveniently and efficiently. At Carely, we understand the challenges individuals face when it comes to scheduling doctor appointments and managing their health records.</p>
@@ -15,22 +39,55 @@ const About = () => {
           <b>Our Vision</b>
           <p>Our vision at Carely is to create a seamless healthcare experience for every user. We aim to bridge the gap between patients and healthcare providers, making it easier for you to access the care you need, when you need it.</p>
         </div>
-      </div>
+      </motion.div>
 
-      <div className='flex flex-col justify-center md:flex md:flex-row items-center gap-4 py-5 mb-5 md:py-16 text-gray-800 w-full md:mt-3' id='speciality'> {/* Inside this div i have stored two elements which is hi and p tag and i have styled using tailwind. this speciality menu (categories) In this user can select the categories*/}
+      <motion.div 
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{y: 0, opacity: 1}}
+      //  animate={{ y: 0, opacity: 1 }}
+       transition={{
+         delay: 0.2,
+         y: { type: "spring", stiffness: 60 },
+         opacity: { duration: 1 },
+         ease: "easeIn",
+         duration: 1,
+       }}
+      className='flex flex-col justify-center md:flex md:flex-row items-center gap-4 py-5 mb-5 md:py-16 text-gray-800 w-full md:mt-3' id='speciality'> {/* Inside this div i have stored two elements which is hi and p tag and i have styled using tailwind. this speciality menu (categories) In this user can select the categories*/}
           <div className="text-center md:text-start md:relative left-[9%] ">
             <h1 className='text-2xl  font-medium '>Make video call and <span className='text-primary font-medium'>clarify your doubts</span> </h1>
           <p className='md:w-[80%] mt-3 text-center md:text-start text-sm'>Simply browse through our extensive list of trusted doctors, schedule your appointment hassle-free.</p>
           <img src={assets.apps} alt="Apps" className="md:w-[30%] md:relative right-3" />
             </div>
                <img src={assets.video} className="w-[60%] ms-10 md:ms-0 md:relative right-[5%] md:w-[25%]"/>
-          </div>
+          </motion.div>
 
-      <div className='text-2xl my-4 mb-6 text-center text-black font-medium'>
+      <motion.div 
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{y: 0, opacity: 1}}
+      //  animate={{ y: 0, opacity: 1 }}
+       transition={{
+         delay: 0.2,
+         y: { type: "spring", stiffness: 60 },
+         opacity: { duration: 1 },
+         ease: "easeIn",
+         duration: 1,
+       }}
+      className='text-2xl my-4 mb-6 text-center text-black font-medium'>
        <p className='font-semibold'>WHY TO CHOOSE <span className='text-primary font-semibold'>CARELY</span></p>
-      </div>
+      </motion.div>
 
-      <div className='flex flex-col md:flex-row mb-20 border border-stone-400 md:mx-10 shadow-xl rounded-xl '>
+      <motion.div 
+        initial={{ y: -100, opacity: 0 }}
+        whileInView={{y: 0, opacity: 1}}
+      //  animate={{ y: 0, opacity: 1 }}
+       transition={{
+         delay: 0.2,
+         y: { type: "spring", stiffness: 60 },
+         opacity: { duration: 1 },
+         ease: "easeIn",
+         duration: 1,
+       }}
+      className='flex flex-col md:flex-row mb-20 border border-stone-400 md:mx-10 shadow-xl rounded-xl '>
 
         <div className=' px-10 md:px-16 py-8 sm:py-16 flex flex-col gap-6 text-[15px] bg-primary text-white  transition-all duration-300'>
           <b className='text-center text-xl'>EFFICIENCY</b>
@@ -50,7 +107,7 @@ const About = () => {
         <p className='text-center'>Tailored recommendations and reminders to help you stay on top of your health.</p>
         </div>
 
-      </div>
+      </motion.div>
     </div>
   )
 }

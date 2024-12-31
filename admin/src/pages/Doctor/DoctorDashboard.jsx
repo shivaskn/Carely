@@ -155,7 +155,7 @@ const DoctorDashboard = () => {
           </div>
           
         </div>
-        <div className=" mt-10 border-2 p-5 w-[30%] shadow-xl">
+        <div className=" mt-10 border-2 p-5 w-[40%] shadow-xl">
           <h2>Doctor Dashboard</h2>
           {dashData ? (
             <>
