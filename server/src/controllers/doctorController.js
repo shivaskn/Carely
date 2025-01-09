@@ -201,7 +201,7 @@ const doctorProfile = async (req, res) => {
 const updateDoctorProfile = async (req, res) => {
   try {
     const { fees, address, available } = req.body;
-    const { docId } = req
+    const { docId } = req;
 
     const profileEdit = await doctor.findByIdAndUpdate(docId, {
       fees,
@@ -219,7 +219,7 @@ const updateDoctorProfile = async (req, res) => {
     res.json({
       success: false,
       message: error.message,
-    })
+    });
   }
 };
 
