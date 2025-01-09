@@ -1,5 +1,5 @@
 import validator from "validator";
-import bcrypt, { hash } from "bcrypt";
+import bcrypt from "bcryptjs";
 import user from "../models/usersModel.js";
 import jwt from "jsonwebtoken";
 import { v2 as cloudinary } from "cloudinary";
