@@ -22,11 +22,7 @@ connectCloud()
 // Middlewares
 
 app.use(express.json())
-app.use(cors({
-    origin: "https://carelys.netlify.app/",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-}))
+app.use(cors())
 
 // Api endpoints
 // localhost:8000/api/admin/add:doctor
