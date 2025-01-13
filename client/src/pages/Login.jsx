@@ -25,7 +25,7 @@ const Login = () => {
     
     try {
       if(state === 'Sign Up'){
-        const {data} = await axios.post('http://localhost:8000/api/user/register', input)
+        const {data} = await axios.post('https://carely-k6jk.onrender.com/api/user/register', input)
         if(data.success){
           localStorage.setItem('token',data.token)
           setToken(data.token)
@@ -33,7 +33,7 @@ const Login = () => {
           toast.error(data.message)
         }
       } else{
-        const {data} = await axios.post('http://localhost:8000/api/user/login', input)
+        const {data} = await axios.post('https://carely-k6jk.onrender.com/api/user/login', input)
         if(data.success){
           localStorage.setItem('token',data.token)
           setToken(data.token)

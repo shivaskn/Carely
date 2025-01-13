@@ -14,7 +14,7 @@ const MyAppointment = () => {
   const getUserAppointments = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:8000/api/user/appointments",
+        "https://carely-k6jk.onrender.com/api/user/appointments",
         { headers: {
           Authorization: `Bearer ${token}` 
         } }
@@ -33,7 +33,7 @@ const MyAppointment = () => {
   const cancelAppointment = async (appointmentId) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/user/cancel-appointment",
+        "https://carely-k6jk.onrender.com/api/user/cancel-appointment",
         { appointmentId },
         { headers: {
           Authorization: `Bearer ${token}` 
@@ -66,7 +66,7 @@ const MyAppointment = () => {
         console.log(response)
 
         try {
-          const {data} = await axios.post('http://localhost:8000/api/user/verify',response,{headers:{
+          const {data} = await axios.post('https://carely-k6jk.onrender.com/api/user/verify',response,{headers:{
             Authorization: `Bearer ${token}` 
           }})
           if(data.success){
@@ -85,7 +85,7 @@ const MyAppointment = () => {
 
   const appointmentRazorpay = async (appointmentId) => {
       try {
-        const {data} = await axios.post("http://localhost:8000/api/user/payment",{appointmentId},{headers:{
+        const {data} = await axios.post("https://carely-k6jk.onrender.com/api/user/payment",{appointmentId},{headers:{
           Authorization: `Bearer ${token}` 
       }})
         if(data.success){

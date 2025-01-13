@@ -26,7 +26,7 @@ const MyProfile = () => {
         formData.append('dob',userData.dob)
         image && formData.append('image',image)
 
-        const {data} = await axios.post('http://localhost:8000/api/user/update-profile',formData,{headers:{
+        const {data} = await axios.post('https://carely-k6jk.onrender.com/api/user/update-profile',formData,{headers:{
           Authorization: `Bearer ${token}`
        }})
         if(data.success){

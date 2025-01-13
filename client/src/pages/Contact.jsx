@@ -17,7 +17,7 @@ const Contact = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/api/jobvacancy/careers",
+        "https://carely-k6jk.onrender.com/api/jobvacancy/careers",
         input
       );
       if (data.success) {

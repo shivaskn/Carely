@@ -16,7 +16,7 @@ const DoctorContextProvider = (props) => {
 
   const getAppointments = async()=> {
     try {
-      const {data} = await axios.get(`http://localhost:8000/api/doctor/appointments`, {headers:{
+      const {data} = await axios.get(`https://carely-k6jk.onrender.com/api/doctor/appointments`, {headers:{
         Authorization: `Bearer ${dToken}` 
       }})
        if(data.success){
@@ -32,7 +32,7 @@ const DoctorContextProvider = (props) => {
  
   const completeAppointment = async (appointmentId) => {
     try {
-      const {data} = await axios.post('http://localhost:8000/api/doctor/complete-appointment', {appointmentId}, {headers:{
+      const {data} = await axios.post('https://carely-k6jk.onrender.com/api/doctor/complete-appointment', {appointmentId}, {headers:{
         Authorization: `Bearer ${dToken}` 
       }})
       if (data.success){
@@ -49,7 +49,7 @@ const DoctorContextProvider = (props) => {
 
   const cancelAppointment = async (appointmentId) => {
     try {
-      const {data} = await axios.post('http://localhost:8000/api/doctor/cancel-appointment', {appointmentId}, {headers:{
+      const {data} = await axios.post('https://carely-k6jk.onrender.com/api/doctor/cancel-appointment', {appointmentId}, {headers:{
         Authorization: `Bearer ${dToken}` 
       }})
       if (data.success){
@@ -66,7 +66,7 @@ const DoctorContextProvider = (props) => {
 
   const getDashData = async () => {
     try {
-      const {data} = await axios.get(`http://localhost:8000/api/doctor/dashboard`,{headers:{
+      const {data} = await axios.get(`https://carely-k6jk.onrender.com/api/doctor/dashboard`,{headers:{
         Authorization: `Bearer ${dToken}` 
       }})
       if(data.success){
@@ -83,7 +83,7 @@ const DoctorContextProvider = (props) => {
 
   const getProfileData = async () => {
     try {
-      const {data} = await axios.get(`http://localhost:8000/api/doctor/profile`,{headers:{
+      const {data} = await axios.get(`https://carely-k6jk.onrender.com/api/doctor/profile`,{headers:{
         Authorization: `Bearer ${dToken}` 
       }})
       if(data.success){

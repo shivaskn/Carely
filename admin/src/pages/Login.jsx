@@ -33,7 +33,7 @@ const Login = () => {
         if(state === 'Admin'){
            
         {/*When you make a request with axios.post, it returns a response object that contains several properties, like data, status, statusText, headers. so response object la vanthu data propety nu onnu iruku athula tha payload iruku (namma token) so na direct ha destructing panni vachu iruka {data} va ethuku na line of codes ha kammi panna,*/}
-        const {data} = await axios.post('http://localhost:8000/api/admin/login',input)
+        const {data} = await axios.post('https://carely-k6jk.onrender.com/api/admin/login',input)
         if(data.success){
             {/* So inga vanthu nammaloda token ha localstrong la save or set pannurom*/}
             localStorage.setItem('adminToken',data.token)
@@ -44,7 +44,7 @@ const Login = () => {
         }
 
         } else {
-            const {data} = await axios.post("http://localhost:8000/api/doctor/login", input)
+            const {data} = await axios.post("https://carely-k6jk.onrender.com/api/doctor/login", input)
             if(data.success){
               {/* So inga vanthu nammaloda token ha localstrong la save or set pannurom*/}
               localStorage.setItem('dToken',data.token)

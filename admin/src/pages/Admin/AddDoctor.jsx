@@ -50,7 +50,7 @@ const AddDoctor = () => {
       // })
 
       const { data } = await axios.post(
-        "http://localhost:8000/api/admin/add-doctor",
+        "https://carely-k6jk.onrender.com/api/admin/add-doctor",
         formData,
         { headers: {
           Authorization: `Bearer ${adminToken}` 
