@@ -16,7 +16,7 @@ const AdminContextProvider = (props) => {
     // If the backend requires certain parameters in the request body (like adminToken) for authentication or role-based authorization, a POST request may be used. GET requests don't support request bodies in HTTP, so using POST is a way to securely include sensitive or structured data.
     try {
       const { data } = await axios.post(
-        "https://carely-k6jk.onrender.com/api/admin/all-doctors",
+        "https://carely-23w9.onrender.com/api/admin/all-doctors",
         {},
         { headers:{
           Authorization: `Bearer ${adminToken}` 
@@ -36,7 +36,7 @@ const AdminContextProvider = (props) => {
   const changeAvailability = async (docId) => {
     try {
       const { data } = await axios.post(
-        "https://carely-k6jk.onrender.com/api/admin/change-availability",
+        "https://carely-23w9.onrender.com/api/admin/change-availability",
         { docId },
         { headers: {
           Authorization: `Bearer ${adminToken}` 
@@ -57,7 +57,7 @@ const AdminContextProvider = (props) => {
   const getAllAppointments = async () => {
     try {
       const { data } = await axios.get(
-        "https://carely-k6jk.onrender.com/api/admin/appointments",
+        "https://carely-23w9.onrender.com/api/admin/appointments",
         { headers: {
           Authorization: `Bearer ${adminToken}` 
         } }
@@ -75,7 +75,7 @@ const AdminContextProvider = (props) => {
 
   const cancelAppointment = async (appointmentId) => {
        try {
-        const {data} = await axios.post( "https://carely-k6jk.onrender.com/api/admin/cancel-appointment",{appointmentId},{headers:{
+        const {data} = await axios.post( "https://carely-23w9.onrender.com/api/admin/cancel-appointment",{appointmentId},{headers:{
           Authorization: `Bearer ${adminToken}` 
         }})
         if(data.success){
@@ -91,7 +91,7 @@ const AdminContextProvider = (props) => {
 
   const getDashData = async () => {
     try {
-      const {data} = await axios.get("https://carely-k6jk.onrender.com/api/admin/dashboard",{headers:{
+      const {data} = await axios.get("https://carely-23w9.onrender.com/api/admin/dashboard",{headers:{
         Authorization: `Bearer ${adminToken}` 
       }})
       if(data.success){

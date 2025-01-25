@@ -149,7 +149,7 @@ const Appointment = () => {
       console.log(slotDate);
 
       const { data } = await axios.post(
-        "http://localhost:8000/api/user/book-appointment",
+        "https://carely-23w9.onrender.com/api/user/book-appointment",
         { docId, slotDate, slotTime },
         {
           headers: {

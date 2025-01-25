@@ -19,7 +19,7 @@ const DoctorProfile = () => {
         available:profileData.available
       }
 
-      const {data} = await axios.post('https://carely-k6jk.onrender.com/api/doctor/update-profile',updateData,{headers:{
+      const {data} = await axios.post('https://carely-23w9.onrender.com/api/doctor/update-profile',updateData,{headers:{
         Authorization: `Bearer ${dToken}` 
       }})
       if(data.success){

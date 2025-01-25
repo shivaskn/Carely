@@ -17,7 +17,7 @@ const AppContextProvider = (props) => {
 
   const getDoctorsData = async () => {
     try {
-      const { data } = await axios.get("https://carely-k6jk.onrender.com/api/doctor/list");
+      const { data } = await axios.get("https://carely-23w9.onrender.com/api/doctor/list");
         setDoctors(data.doctors);
     } catch (error) {
       console.log(error);
@@ -29,7 +29,7 @@ const AppContextProvider = (props) => {
   const loadUserProfileData = async () => {
     try {
       const {data} = await axios.get(
-        'https://carely-k6jk.onrender.com/api/user/get-profile',
+        'https://carely-23w9.onrender.com/api/user/get-profile',
         {headers:{
           Authorization: `Bearer ${token}` 
         }}

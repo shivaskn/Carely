@@ -24,7 +24,7 @@ const DoctorDashboard = () => {
     // Fetch dashboard data from backend
     const fetchDashboardData = async () => {
       try {
-        const response = await axios.get("https://carely-k6jk.onrender.com/api/doctor/dashboard", {
+        const response = await axios.get("https://carely-23w9.onrender.com/api/doctor/dashboard", {
           headers: { Authorization: `Bearer ${dToken}` },
         });
         setDashData(response.data.dashData);

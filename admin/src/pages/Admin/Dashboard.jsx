@@ -14,7 +14,7 @@ const Dashboard = () => {
       // Fetch dashboard data from backend
       const fetchDashboardData = async () => {
         try {
-          const response = await axios.get("https://carely-k6jk.onrender.com/api/admin/dashboard", {
+          const response = await axios.get("https://carely-23w9.onrender.com/api/admin/dashboard", {
             headers: { Authorization: `Bearer ${adminToken}` },
           });
           setDashData(response.data.dashData);
