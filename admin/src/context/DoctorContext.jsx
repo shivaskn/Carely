@@ -10,7 +10,7 @@ const DoctorContextProvider = (props) => {
 
   const [dToken, setDToken] = useState(localStorage.getItem("dToken") ? localStorage.getItem("dToken") : "");
   const [appointments,setAppointments] = useState([])
-  const [dashData, setDashData] = useState([])
+  const [dashData, setDashData] = useState(false)
   const [profileData,setProfileData] = useState(false)
 
 
@@ -32,7 +32,7 @@ const DoctorContextProvider = (props) => {
  
   const completeAppointment = async (appointmentId) => {
     try {
-      const {data} = await axios.post('https://carely-k6jk.onrender.com/api/doctor/complete-appointment', {appointmentId}, {headers:{
+      const {data} = await axios.post('https://carely-23w9.onrender.com/api/doctor/complete-appointment', {appointmentId}, {headers:{
         Authorization: `Bearer ${dToken}` 
       }})
       if (data.success){
@@ -49,7 +49,7 @@ const DoctorContextProvider = (props) => {
 
   const cancelAppointment = async (appointmentId) => {
     try {
-      const {data} = await axios.post('https://carely-k6jk.onrender.com/api/doctor/cancel-appointment', {appointmentId}, {headers:{
+      const {data} = await axios.post('https://carely-23w9.onrender.com/api/doctor/cancel-appointment', {appointmentId}, {headers:{
         Authorization: `Bearer ${dToken}` 
       }})
       if (data.success){
@@ -66,7 +66,7 @@ const DoctorContextProvider = (props) => {
 
   const getDashData = async () => {
     try {
-      const {data} = await axios.get(`https://carely-k6jk.onrender.com/api/doctor/dashboard`,{headers:{
+      const {data} = await axios.get(`https://carely-23w9.onrender.com/api/doctor/dashboard`,{headers:{
         Authorization: `Bearer ${dToken}` 
       }})
       if(data.success){
